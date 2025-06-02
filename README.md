@@ -1,2 +1,5 @@
 # trackmail-project
-Repositório do projeto de desenvolvimento web
+
+## Integrantes do Projeto:
+- José Douglas
+- Wellington Vinicius
