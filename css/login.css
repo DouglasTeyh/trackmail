@@ -1,0 +1,112 @@
+/* Estilos para a página de login (login.css) */
+
+/* Importar uma fonte (opcional, mas recomendado para um visual melhor) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Fundo dividido: 50% azul, 50% branco */
+    background: linear-gradient(to bottom, #007bff 50%, #ffffff 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    padding: 20px;
+}
+
+.login-form {
+    background-color: #007bff;
+    /* Mesmo azul do fundo */
+    padding: 40px;
+    border-radius: 25px;
+    /* Bordas bem arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+/* --- Logo --- */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    color: #fff;
+}
+
+.logo-container .fa-envelope {
+    font-size: 40px;
+    /* Tamanho do ícone */
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.logo-text {
+    text-align: left;
+}
+
+.logo-text span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.logo-text h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+}
+
+/* --- Campos do Formulário --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+/* --- Botão de Login --- */
+button {
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #ff8c00;
+    /* Laranja vibrante */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #e67e00;
+    /* Laranja um pouco mais escuro */
+    transform: scale(1.03);
+    /* Leve aumento ao passar o mouse */
+}

@@ -1,0 +1,140 @@
+/* Estilos para a página principal (dashboard.css) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+/* --- Controle de visibilidade das páginas --- */
+.page {
+    display: none;
+    /* Todas as seções 'page' começam escondidas */
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page.active {
+    display: block;
+    /* A página com a classe 'active' será exibida */
+}
+
+/* Para a seção de login, queremos manter o layout centralizado */
+#login-page.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Layout Geral do Dashboard --- */
+#dashboard-page {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* --- Cabeçalho Principal (Azul) --- */
+.main-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0 30px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    /* Impede que o header encolha */
+}
+
+.logo-container-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-container-header .fa-envelope {
+    font-size: 24px;
+}
+
+.logo-text-header span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.logo-text-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* --- Corpo do Dashboard (Sidebar + Conteúdo) --- */
+.dashboard-body {
+    display: flex;
+    flex-grow: 1;
+    /* Ocupa o resto da altura disponível */
+    overflow: hidden;
+    /* Evita barras de rolagem indesejadas */
+}
+
+/* --- Menu Lateral (Sidebar) --- */
+.sidebar {
+    width: 240px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    text-decoration: none;
+    color: #495057;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar nav a:hover {
+    background-color: #e9ecef;
+}
+
+.sidebar nav a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    /* Adiciona scroll se o conteúdo for grande */
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Mail - Sistema de Logística</title>
+
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <section id="login-page" class="page active">
+        <div class="login-container">
+            <form class="login-form">
+                <div class="logo-container">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="logo-text">
+                        <span>TRACK</span>
+                        <h1>MAIL</h1>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Sua senha" required>
+                </div>
+                <button type="button" id="login-button">Entrar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="dashboard-page" class="page">
+        <div class="dashboard-layout">
+            <header class="main-header">
+                <div class="logo-container-header">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="logo-text-header">
+                        <span>TRACK</span>
+                        <h1>MAIL</h1>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <span>Olá, Antônio!</span>
+                    <img src="assets/img/avatar.png" alt="Avatar do Usuário">
+                </div>
+            </header>
+
+            <div class="dashboard-body">
+                <aside class="sidebar">
+                    <nav>
+                        <ul>
+                            <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                            <li><a href="#"><i class="fa-solid fa-users"></i> Clientes</a></li>
+                            <li><a href="#"><i class="fa-solid fa-box-open"></i> Encomendas</a></li>
+                            <li><a href="#"><i class="fa-solid fa-truck-fast"></i> Entregas</a></li>
+                            <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <main class="main-content">
+                    <h1>Bem-vindo ao seu Dashboard!</h1>
+                    <p>Selecione uma opção no menu ao lado para começar.</p>
+                </main>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Js só para fazer testes de navegação entre as páginas
+        // 1. Encontrar os elementos na página
+        const loginButton = document.getElementById('login-button');
+        const loginPage = document.getElementById('login-page');
+        const dashboardPage = document.getElementById('dashboard-page');
+
+        // 2. Adicionar um "ouvinte" de clique no botão
+        loginButton.addEventListener('click', function () {
+            // 3. Quando o botão for clicado...
+
+            // Esconde a página de login
+            loginPage.classList.remove('active');
+
+            // Mostra a página do dashboard
+            dashboardPage.classList.add('active');
+        });
+    </script>
+</body>
+
+</html>
