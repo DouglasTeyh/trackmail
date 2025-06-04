@@ -1,27 +1,27 @@
-/* Estilos para a página principal (dashboard.css) */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-/* --- Controle de visibilidade das páginas --- */
+
 .page {
     display: none;
-    /* Todas as seções 'page' começam escondidas */
     width: 100%;
     min-height: 100vh;
+
 }
 
-.page.active {
+.page.active {   
     display: block;
-    /* A página com a classe 'active' será exibida */
+
 }
 
-/* Para a seção de login, queremos manter o layout centralizado */
+
 #login-page.active {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* --- Layout Geral do Dashboard --- */
+
 #dashboard-page {
     background-color: #f0f2f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,7 +33,7 @@
     height: 100vh;
 }
 
-/* --- Cabeçalho Principal (Azul) --- */
+
 .main-header {
     background-color: #007bff;
     color: #fff;
@@ -43,7 +43,7 @@
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
-    /* Impede que o header encolha */
+
 }
 
 .logo-container-header {
@@ -85,16 +85,17 @@
     border: 2px solid #fff;
 }
 
-/* --- Corpo do Dashboard (Sidebar + Conteúdo) --- */
+
 .dashboard-body {
     display: flex;
     flex-grow: 1;
-    /* Ocupa o resto da altura disponível */
+
     overflow: hidden;
-    /* Evita barras de rolagem indesejadas */
+    
 }
 
-/* --- Menu Lateral (Sidebar) --- */
+
+
 .sidebar {
     width: 240px;
     background-color: #f8f9fa;
@@ -131,10 +132,11 @@
     color: #fff;
 }
 
-/* --- Conteúdo Principal --- */
+
+
 .main-content {
     flex-grow: 1;
     padding: 30px;
     overflow-y: auto;
-    /* Adiciona scroll se o conteúdo for grande */
+    
 }
