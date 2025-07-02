@@ -1,0 +1,386 @@
+/* Variáveis CSS para facilitar a manutenção */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+    --card-bg: #fff;
+    --border-color: #ddd;
+}
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Navegação principal (usada em index.html) */
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 20px 0;
+    background: #444;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: var(--secondary-color);
+}
+
+/* Seção Hero (index.html) */
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Área Administrativa (admin.html) */
+.admin-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os elementos quebrem a linha em telas menores */
+    margin: 20px auto;
+    max-width: 1200px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 70vh;
+    /* Para garantir que o footer fique no final */
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    /* Largura fixa para a sidebar */
+    background: #eee;
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    /* Adicionar classe 'active' com JS para o item selecionado */
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.content-area {
+    flex-grow: 1;
+    /* Ocupa o restante do espaço disponível */
+    padding: 20px;
+}
+
+/* Estilos de formulários */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button[type="submit"],
+.btn {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover,
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Estilos de tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Página de Rastreamento (tracking.html) */
+.tracking-page {
+    max-width: 800px;
+    margin: 30px auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tracking-page h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-section form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+    .search-section form {
+        grid-template-columns: 1fr 1fr;
+        /* Duas colunas em telas maiores */
+    }
+
+    .search-section form button {
+        grid-column: span 2;
+        /* Botão ocupa duas colunas */
+    }
+}
+
+
+.results-area {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.results-area h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.tracking-details p {
+    margin-bottom: 5px;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.history-list li {
+    background: #e9f7ef;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+.history-list li span:first-child {
+    font-weight: bold;
+    color: #555;
+}
+
+.error-message {
+    color: #e74c3c;
+    background-color: #fcdbd9;
+    border: 1px solid #e74c3c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .admin-dashboard {
+        flex-direction: column;
+        /* Pilha a sidebar e o conteúdo em telas pequenas */
+    }
+
+    .sidebar {
+        flex: none;
+        /* Remove a largura fixa */
+        width: 100%;
+        /* Ocupa a largura total */
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 8px 8px 0 0;
+        /* Ajusta bordas */
+        padding: 15px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar ul li {
+        margin: 5px 10px;
+    }
+
+    .sidebar ul li a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .content-area {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
+    .hero-section {
+        padding: 30px 15px;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+
+    button[type="submit"],
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

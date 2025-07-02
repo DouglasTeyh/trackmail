@@ -4,234 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Mail - Sistema de Logística</title>
-
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/clientes.css">
-    <link rel="stylesheet" href="css/encomendas.css">
-    <link rel="stylesheet" href="css/configuracoes.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Sistema de Logística de Entregas</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-    <section id="login-page" class="page active">
-        <div class="login-container">
-            <form class="login-form">
-                <div class="logo-container">
-                    <i class="fa-regular fa-envelope"></i>
-                    <div class="logo-text">
-                        <span>TRACK</span>
-                        <h1>MAIL</h1>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Seu e-mail" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" placeholder="Sua senha" required>
-                </div>
-                <button type="button" id="login-button">Entrar</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="dashboard-page" class="page">
-        <div class="dashboard-layout">
-            <header class="main-header">
-                <div class="logo-container-header">
-                    <i class="fa-regular fa-envelope"></i>
-                    <div class="logo-text-header">
-                        <span>TRACK</span>
-                        <h1>MAIL</h1>
-                    </div>
-                </div>
-                <div class="user-info">
-                    <span>Olá, Antônio!</span>
-                    <img src="assets/img/avatar.png" alt="Avatar do Usuário">
-                </div>
-            </header>
-
-            <div class="dashboard-body">
-                <aside class="sidebar">
-                    <nav>
-                        <ul>
-                            <li><a href="#" class="active" data-template="template-dashboard"><i
-                                        class="fa-solid fa-house"></i> Dashboard</a></li>
-                            <li><a href="#" data-template="template-clientes"><i class="fa-solid fa-users"></i>
-                                    Clientes</a></li>
-                            <li><a href="#" data-template="template-encomendas"><i class="fa-solid fa-box-open"></i>
-                                    Encomendas</a></li>
-                            <li><a href="#" data-template="template-entregas"><i class="fa-solid fa-truck-fast"></i>
-                                    Entregas</a></li>
-                            <li><a href="#" data-template="template-configuracoes"><i class="fa-solid fa-gear"></i>
-                                    Configurações</a></li>
-                        </ul>
-                    </nav>
-                </aside>
-
-                <main class="main-content" id="main-content-area">
-                    <h1>Bem-vindo ao seu Dashboard!</h1>
-                    <p>Selecione uma opção no menu ao lado para começar.</p>
-                </main>
-            </div>
-        </div>
-    </section>
-
-    <template id="template-dashboard">
-        <h1>Bem-vindo ao seu Dashboard!</h1>
-        <p>Selecione uma opção no menu ao lado para começar.</p>
-    </template>
-
-    <template id="template-clientes">
-        <div class="content-header">
-            <h2>Gestão de Clientes</h2>
-            <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Adicionar Cliente</button>
-        </div>
-        <div class="content-body">
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome Completo</th>
-                            <th>E-mail</th>
-                            <th>Telefone</th>
-                            <th>Status</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ana Silva</td>
-                            <td>ana.silva@email.com</td>
-                            <td>(81) 99999-8888</td>
-                            <td><span class="status status-active">Ativo</span></td>
-                            <td>
-                                <button class="btn-icon btn-edit"><i class="fa-solid fa-pencil"></i></button>
-                                <button class="btn-icon btn-delete"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </template>
-
-    <template id="template-encomendas">
-        <div class="content-header">
-            <h2>Gestão de Encomendas</h2>
-            <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Nova Encomenda</button>
-        </div>
-        <div class="content-body">
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Rastreio</th>
-                            <th>Destinatário</th>
-                            <th>Destino</th>
-                            <th>Data</th>
-                            <th>Status</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>TRK001MA</td>
-                            <td>Mariana Oliveira</td>
-                            <td>Recife, PE</td>
-                            <td>03/06/2025</td>
-                            <td><span class="status status-delivered">Entregue</span></td>
-                            <td>
-                                <button class="btn-icon btn-edit"><i class="fa-solid fa-pencil"></i></button>
-                                <button class="btn-icon btn-delete"><i class="fa-solid fa-box"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>TRK002MA</td>
-                            <td>Felipe Alves</td>
-                            <td>São Paulo, SP</td>
-                            <td>02/06/2025</td>
-                            <td><span class="status status-in-transit">Em Trânsito</span></td>
-                            <td>
-                                <button class="btn-icon btn-edit"><i class="fa-solid fa-pencil"></i></button>
-                                <button class="btn-icon btn-delete"><i class="fa-solid fa-box"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>TRK003MA</td>
-                            <td>Juliana Lima</td>
-                            <td>Salvador, BA</td>
-                            <td>01/06/2025</td>
-                            <td><span class="status status-pending">Aguardando Coleta</span></td>
-                            <td>
-                                <button class="btn-icon btn-edit"><i class="fa-solid fa-pencil"></i></button>
-                                <button class="btn-icon btn-delete"><i class="fa-solid fa-box"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </template>
-
-    <template id="template-entregas">
-        <div class="content-header">
-            <h2>Gestão de Entregas</h2>
-        </div>
-        <div class="content-body">
-            <p>A área de gestão de entregas será construída aqui.</p>
-        </div>
-    </template>
-
-    <template id="template-configuracoes">
-        <div class="content-header">
-            <h2>Configurações</h2>
-        </div>
-        <div class="content-body">
-            <p>A área de configurações do sistema será construída aqui.</p>
-        </div>
-    </template>
-
-
-    <script>
-        // Este js é apenas para a lógica de troca de telas e navegação dentro do dashboard
-        // --- LÓGICA DE TROCA DE TELA (LOGIN -> DASHBOARD) ---
-        const loginButton = document.getElementById('login-button');
-        const loginPage = document.getElementById('login-page');
-        const dashboardPage = document.getElementById('dashboard-page');
-
-        loginButton.addEventListener('click', function () {
-            loginPage.classList.remove('active');
-            dashboardPage.classList.add('active');
-        });
-
-        // --- LÓGICA DE NAVEGAÇÃO DENTRO DO DASHBOARD ---
-        const sidebarLinks = document.querySelectorAll('.sidebar nav a');
-        const mainContentArea = document.getElementById('main-content-area');
-
-        sidebarLinks.forEach(function (link) {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                document.querySelector('.sidebar nav a.active').classList.remove('active');
-                this.classList.add('active');
-
-                const templateId = this.getAttribute('data-template');
-                const template = document.getElementById(templateId);
-
-                if (template) {
-                    mainContentArea.innerHTML = '';
-                    mainContentArea.appendChild(template.content.cloneNode(true));
-                } else {
-                    mainContentArea.innerHTML = '<h1>Conteúdo não encontrado</h1>';
-                }
-            });
-        });
-    </script>
-
+    <header>
+        <h1>Bem-vindo ao Sistema de Logística</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="admin.html">Área Administrativa</a></li>
+            <li><a href="tracking.html">Rastrear Encomenda</a></li>
+        </ul>
+    </nav>
+    <main class="hero-section">
+        <p>Gerencie suas entregas com eficiência e rastreie suas encomendas em tempo real.</p>
+        <img src="img/ilustracao_logica.png" alt="Ilustração de Logística">
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Logística. Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>
