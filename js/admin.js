@@ -1,14 +1,7 @@
-// js/admin.js
-
-// Importa funções do main.js se estiver usando módulos ES6 (precisaria de type="module" no script HTML)
-// Se não estiver usando módulos, as funções em main.js já estariam disponíveis globalmente.
-// Exemplo: import { fetchData, postData, isValidEmail, isValidCpfCnpj } from './main.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const moduleLinks = document.querySelectorAll('.sidebar a');
     const moduleContent = document.getElementById('module-content');
 
-    // Mapeia o conteúdo HTML para cada módulo
     const modulesHTML = {
         clientes: `
             <h2>Gerenciar Clientes</h2>
@@ -247,15 +240,12 @@ document.addEventListener('DOMContentLoaded', () => {
         `
     };
 
-    // Função para carregar o conteúdo de um módulo
     async function loadModule(moduleName) {
         moduleContent.innerHTML = modulesHTML[moduleName];
 
-        // Remove a classe 'active' de todos os links e adiciona ao clicado
         moduleLinks.forEach(link => link.classList.remove('active'));
         document.querySelector(`.sidebar a[data-module="${moduleName}"]`).classList.add('active');
 
-        // Lógica específica para cada módulo após o HTML ser carregado
         switch (moduleName) {
             case 'clientes':
                 handleClientesModule();
@@ -267,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleRotasModule();
                 break;
             case 'entregas':
-                await handleEntregasModule(); // Use await pois pode carregar dados de outras APIs
+                await handleEntregasModule();
                 break;
             case 'centros':
                 handleCentrosModule();
@@ -275,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Adiciona event listeners aos links da sidebar
     moduleLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -284,10 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Carrega o módulo de clientes por padrão ao carregar a página
     loadModule('clientes');
-
-    // --- Funções de manipulação de cada módulo ---
 
     async function handleClientesModule() {
         const form = document.getElementById('clienteForm');
@@ -304,7 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const email = document.getElementById('clienteEmail').value;
                 const endereco = document.getElementById('clienteEndereco').value;
 
-                // Validações Frontend
                 if (!nome || !cpfCnpj || !email || !endereco) {
                     showMessage('Todos os campos são obrigatórios!', 'error');
                     return;
@@ -323,14 +308,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (result) {
                     showMessage('Cliente cadastrado com sucesso!', 'success');
                     form.reset();
-                    await loadClientes(); // Recarregar a lista
+                    await loadClientes();
                 }
             });
         }
 
         searchButton.addEventListener('click', loadClientes);
-        filterNomeInput.addEventListener('input', () => loadClientes()); // Filtra ao digitar
-        filterCpfCnpjInput.addEventListener('input', () => loadClientes()); // Filtra ao digitar
+        filterNomeInput.addEventListener('input', () => loadClientes());
+        filterCpfCnpjInput.addEventListener('input', () => loadClientes());
 
 
         async function loadClientes() {
@@ -351,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const clientes = await fetchData(endpoint);
-            tableBody.innerHTML = ''; // Limpa antes de adicionar novos dados
+            tableBody.innerHTML = '';
             if (clientes && clientes.length > 0) {
                 clientes.forEach(cliente => {
                     const row = tableBody.insertRow();
@@ -365,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tableBody.innerHTML = '<tr><td colspan="5">Nenhum cliente encontrado.</td></tr>';
             }
         }
-        await loadClientes(); // Carrega clientes na primeira vez que o módulo é aberto
+        await loadClientes();
     }
 
     async function handleEncomendasModule() {
@@ -383,7 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const descricao = document.getElementById('encomendaDescricao').value;
                 const endereco = document.getElementById('encomendaEndereco').value;
 
-                // Validações Frontend
                 if (isNaN(peso) || peso <= 0) {
                     showMessage('Peso inválido. Deve ser um número positivo.', 'error');
                     return;
@@ -402,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (result) {
                     showMessage('Encomenda cadastrada com sucesso!', 'success');
                     form.reset();
-                    await loadEncomendas(); // Recarregar a lista
+                    await loadEncomendas();
                 }
             });
         }
@@ -422,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 params.append('tipo', tipoFilter);
             }
             if (!isNaN(pesoFilter) && pesoFilter >= 0) {
-                params.append('pesoMin', pesoFilter); // Assumindo que a API aceita 'pesoMin'
+                params.append('pesoMin', pesoFilter);
             }
             if (params.toString()) {
                 endpoint += `?${params.toString()}`;
@@ -462,7 +446,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const distancia = parseFloat(document.getElementById('rotaDistancia').value);
                 const tempoEstimado = parseFloat(document.getElementById('rotaTempoEstimado').value);
 
-                // Validações Frontend
                 if (!origem || !destino) {
                     showMessage('Origem e Destino são obrigatórios.', 'error');
                     return;
@@ -481,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (result) {
                     showMessage('Rota cadastrada com sucesso!', 'success');
                     form.reset();
-                    await loadRotas(); // Recarregar a lista
+                    await loadRotas();
                 }
             });
         }
@@ -538,7 +521,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const filterStatusSelect = document.getElementById('filterEntregaStatus');
         const searchButton = document.getElementById('searchEntregas');
 
-        // Funções para popular os selects
         async function populateSelect(selectElement, endpoint, valueField, textField) {
             selectElement.innerHTML = '<option value="">Carregando...</option>';
             const data = await fetchData(endpoint);
@@ -556,12 +538,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         await populateSelect(clienteSelect, '/clientes', 'id', 'nome');
-        await populateSelect(encomendaSelect, '/encomendas', 'id', 'descricao'); // Ou outro campo que identifique a encomenda
-        await populateSelect(rotaSelect, '/rotas', 'id', 'origem'); // Pode ser 'origem - destino'
+        await populateSelect(encomendaSelect, '/encomendas', 'id', 'descricao');
+        await populateSelect(rotaSelect, '/rotas', 'id', 'origem');
 
-        // Popula os selects de filtro
         await populateSelect(filterClienteSelect, '/clientes', 'id', 'nome');
-        await populateSelect(filterRotaSelect, '/rotas', 'id', 'origem'); // Adapte para exibir algo útil
+        await populateSelect(filterRotaSelect, '/rotas', 'id', 'origem');
 
         if (form) {
             form.addEventListener('submit', async (event) => {
@@ -571,7 +552,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rotaId = rotaSelect.value;
                 const dataEstimada = document.getElementById('entregaDataEstimada').value;
 
-                // Validações Frontend
                 if (!clienteId || !encomendaId || !rotaId || !dataEstimada) {
                     showMessage('Todos os campos são obrigatórios para criar uma entrega.', 'error');
                     return;
@@ -587,14 +567,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     encomendaId: parseInt(encomendaId),
                     rotaId: parseInt(rotaId),
                     dataEstimada,
-                    status: 'em_preparo' // Status inicial padrão
+                    status: 'em_preparo'
                 };
 
                 const result = await postData('/entregas', newEntrega);
                 if (result) {
                     showMessage('Entrega criada com sucesso!', 'success');
                     form.reset();
-                    await loadEntregas(); // Recarregar a lista
+                    await loadEntregas();
                 }
             });
         }
@@ -636,7 +616,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (const entrega of entregas) {
                     const row = tableBody.insertRow();
                     row.insertCell().textContent = entrega.id;
-                    // Buscar nomes para exibir em vez de IDs
                     const cliente = await fetchData(`/clientes/${entrega.clienteId}`);
                     const encomenda = await fetchData(`/encomendas/${entrega.encomendaId}`);
                     const rota = await fetchData(`/rotas/${entrega.rotaId}`);

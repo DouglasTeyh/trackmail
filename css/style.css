@@ -1,4 +1,3 @@
-/* Variáveis CSS para facilitar a manutenção */
 :root {
     --primary-color: #3498db;
     --secondary-color: #2ecc71;
@@ -8,7 +7,6 @@
     --border-color: #ddd;
 }
 
-/* Reset básico e estilos globais */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +26,6 @@ body {
     padding: 20px;
 }
 
-/* Cabeçalho */
 header {
     background: var(--primary-color);
     color: #fff;
@@ -52,7 +49,6 @@ header nav a:hover {
     color: var(--secondary-color);
 }
 
-/* Navegação principal (usada em index.html) */
 nav ul {
     list-style: none;
     text-align: center;
@@ -79,7 +75,6 @@ nav ul li a:hover {
     background: var(--secondary-color);
 }
 
-/* Seção Hero (index.html) */
 .hero-section {
     text-align: center;
     padding: 50px 20px;
@@ -102,23 +97,19 @@ nav ul li a:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Área Administrativa (admin.html) */
 .admin-dashboard {
     display: flex;
     flex-wrap: wrap;
-    /* Permite que os elementos quebrem a linha em telas menores */
     margin: 20px auto;
     max-width: 1200px;
     background: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     min-height: 70vh;
-    /* Para garantir que o footer fique no final */
 }
 
 .sidebar {
     flex: 0 0 250px;
-    /* Largura fixa para a sidebar */
     background: #eee;
     padding: 20px;
     border-right: 1px solid var(--border-color);
@@ -149,18 +140,15 @@ nav ul li a:hover {
 
 .sidebar ul li a:hover,
 .sidebar ul li a.active {
-    /* Adicionar classe 'active' com JS para o item selecionado */
     background: var(--primary-color);
     color: #fff;
 }
 
 .content-area {
     flex-grow: 1;
-    /* Ocupa o restante do espaço disponível */
     padding: 20px;
 }
 
-/* Estilos de formulários */
 .form-group {
     margin-bottom: 15px;
 }
@@ -201,7 +189,6 @@ button[type="submit"]:hover,
     background: var(--secondary-color);
 }
 
-/* Estilos de tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -220,7 +207,6 @@ table th {
     color: #fff;
 }
 
-/* Página de Rastreamento (tracking.html) */
 .tracking-page {
     max-width: 800px;
     margin: 30px auto;
@@ -246,15 +232,12 @@ table th {
 @media (min-width: 600px) {
     .search-section form {
         grid-template-columns: 1fr 1fr;
-        /* Duas colunas em telas maiores */
     }
 
     .search-section form button {
         grid-column: span 2;
-        /* Botão ocupa duas colunas */
     }
 }
-
 
 .results-area {
     border-top: 1px solid var(--border-color);
@@ -302,7 +285,6 @@ table th {
     text-align: center;
 }
 
-/* Rodapé */
 footer {
     text-align: center;
     padding: 20px;
@@ -311,22 +293,17 @@ footer {
     margin-top: 20px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .admin-dashboard {
         flex-direction: column;
-        /* Pilha a sidebar e o conteúdo em telas pequenas */
     }
 
     .sidebar {
         flex: none;
-        /* Remove a largura fixa */
         width: 100%;
-        /* Ocupa a largura total */
         border-right: none;
         border-bottom: 1px solid var(--border-color);
         border-radius: 8px 8px 0 0;
-        /* Ajusta bordas */
         padding: 15px;
     }
 

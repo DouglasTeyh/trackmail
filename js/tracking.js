@@ -1,8 +1,3 @@
-// js/tracking.js
-
-// Importa funções do main.js se estiver usando módulos ES6
-// Exemplo: import { fetchData, showMessage } from './main.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const trackingForm = document.getElementById('trackingForm');
     const trackingCodeInput = document.getElementById('trackingCode');
@@ -17,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const clientName = clientNameInput.value.trim();
             const statusFilter = statusFilterSelect.value;
 
-            trackingResultsDiv.innerHTML = ''; // Limpa resultados anteriores
+            trackingResultsDiv.innerHTML = '';
 
             if (!trackingCode && !clientName && !statusFilter) {
                 showMessage('Preencha ao menos um campo para buscar a encomenda.', 'error');
@@ -29,12 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const params = new URLSearchParams();
 
                 if (trackingCode) {
-                    endpoint = `/entregas/${trackingCode}`; // Assume que a API pode buscar por ID direto
+                    endpoint = `/entregas/${trackingCode}`;
                 } else {
                     if (clientName) {
-                        // Isso pode exigir uma busca por clientes primeiro ou que a API /entregas
-                        // suporte filtro por nome de cliente diretamente.
-                        // Para simplificar, vamos assumir que a API /entregas pode filtrar por nome do cliente.
                         params.append('clienteNome', clientName);
                     }
                     if (statusFilter) {
@@ -56,17 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 let entrega;
                 let historico;
 
-                // Se a busca foi por código, result já é o objeto da entrega
                 if (trackingCode && !Array.isArray(result)) {
                     entrega = result;
                     historico = await fetchData(`/entregas/${entrega.id}/historico`);
                 } else if (Array.isArray(result)) {
-                    // Se a busca retornou uma lista (filtros por cliente/status), exibe a primeira ou todas
-                    // Para este exemplo, vamos exibir a primeira encontrada ou adaptar para exibir várias.
-                    // Para um sistema de rastreamento, geralmente se espera uma única encomenda pelo código.
-                    // Se buscar por cliente/status, pode ser necessário listar várias e o usuário escolher.
                     if (result.length > 0) {
-                        entrega = result[0]; // Pega a primeira para exibição detalhada
+                        entrega = result[0];
                         historico = await fetchData(`/entregas/${entrega.id}/historico`);
                     }
                 }

@@ -1,8 +1,5 @@
-// js/main.js
+const API_BASE_URL = 'http://localhost:3000';
 
-const API_BASE_URL = 'http://localhost:3000'; // Substitua pela URL da sua API REST
-
-// Função genérica para fazer requisições GET
 async function fetchData(endpoint) {
     try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`);
@@ -18,7 +15,6 @@ async function fetchData(endpoint) {
     }
 }
 
-// Função genérica para fazer requisições POST
 async function postData(endpoint, data) {
     try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -41,27 +37,23 @@ async function postData(endpoint, data) {
     }
 }
 
-// Validação de e-mail simples
 function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
 }
 
-// Validação de CPF/CNPJ (apenas formato básico, não a validação de dígitos)
 function isValidCpfCnpj(doc) {
-    const cleanedDoc = doc.replace(/\D/g, ''); // Remove não-dígitos
+    const cleanedDoc = doc.replace(/\D/g, '');
     if (cleanedDoc.length === 11 || cleanedDoc.length === 14) {
-        return true; // Assume que o formato está ok para CPF ou CNPJ
+        return true;
     }
     return false;
 }
 
-// Função para mostrar mensagens de erro no frontend (pode ser aprimorada com um div específico)
 function showMessage(message, type = 'error') {
     const msgDiv = document.createElement('div');
     msgDiv.textContent = message;
     msgDiv.classList.add(type === 'error' ? 'error-message' : 'success-message');
-    // Adicionar ao corpo ou a um elemento específico onde as mensagens devem aparecer
-    document.body.prepend(msgDiv); // Adiciona no início do body
-    setTimeout(() => msgDiv.remove(), 5000); // Remove a mensagem após 5 segundos
+    document.body.prepend(msgDiv);
+    setTimeout(() => msgDiv.remove(), 5000);
 }
