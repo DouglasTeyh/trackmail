@@ -4,17 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rastrear Encomenda - Logística</title>
+    <title>TrackMAIL - Rastrear Encomenda</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Rastrear Encomenda</h1>
-        <nav>
-            <a href="index.html">Voltar para a Página Inicial</a>
-        </nav>
-    </header>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    fetch('../components/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+    });
+    </script>
+    
+    <div id="navbar-placeholder"></div>
     <main class="tracking-page">
         <section class="search-section">
             <h2>Buscar Encomenda</h2>

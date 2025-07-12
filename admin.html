@@ -9,12 +9,17 @@
 </head>
 
 <body>
-    <header>
-        <h1>Área Administrativa</h1>
-        <nav>
-            <a href="index.html">Voltar para a Página Inicial</a>
-        </nav>
-    </header>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    fetch('../components/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+    });
+    </script>
+    
+    <div id="navbar-placeholder"></div>
     <main class="admin-dashboard">
         <aside class="sidebar">
             <h2>Módulos</h2>
