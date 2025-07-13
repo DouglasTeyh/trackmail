@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <button type="submit">Cadastrar Cliente</button>
             </form>
-            <h3>Lista de Clientes</h3>
+            <br>
+            <hr>
+            <br>
+            <h2>Lista de Clientes</h2>
             <div class="form-group">
                 <label for="filterClienteNome">Filtrar por Nome:</label>
                 <input type="text" id="filterClienteNome" placeholder="Digite o nome">
