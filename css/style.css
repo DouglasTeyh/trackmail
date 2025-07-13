@@ -315,7 +315,7 @@ footer {
     .form-group input[type="date"],
     .form-group select,
     .form-group textarea {
-        width: 89%;
+        width: 90%;
         padding: 10px;
         border: 1px solid var(--border-color);
         border-radius: 10px;
