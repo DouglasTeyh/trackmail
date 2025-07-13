@@ -354,6 +354,28 @@ footer {
     .content-area {
         padding: 15px;
     }
+    .table-container {
+        display: block;
+        width: 100%;
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        border-radius: 6px;
+        border: 1px solid var(--border-color);
+    }
+
+    .table-container table {
+        width: auto;
+        min-width: 100%;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 12px;
+        text-align: left;
+        font-size: 0.9em;
+        white-space: nowrap; 
+    }
+    
 }
 
 @media (max-width: 480px) {
