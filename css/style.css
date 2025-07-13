@@ -308,6 +308,19 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="number"],
+    .form-group input[type="date"],
+    .form-group select,
+    .form-group textarea {
+        width: 89%;
+        padding: 10px;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        font-size: 1em;
+    }
     .admin-dashboard {
         flex-direction: column;
     }
@@ -326,18 +339,16 @@ footer {
     }
 
     .sidebar ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: block; 
     }
 
     .sidebar ul li {
-        margin: 5px 10px;
+        margin: 0 0 10px 0;
     }
-
     .sidebar ul li a {
         padding: 8px 12px;
         font-size: 0.9em;
+        text-align: center; 
     }
 
     .content-area {
