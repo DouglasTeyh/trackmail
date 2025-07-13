@@ -155,18 +155,17 @@ section {
     justify-content: center;
     color: white;
     border: 5px solid #FFFFFF;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in;
     font-size: 36px;
 }
 
 .sessao:hover {
     background-color: #007AD7;
     cursor: pointer;
-    transform: scale(1.05);
-    border: 5px solid #FF8000;
+    transform: scale(1.05) rotateX(10deg);
+    box-shadow: 0 8px 0px rgba(255, 128, 0, 1);
+    transition: all 0.1s ease-out;
 }
-
-/* --- Responsividade --- */
 
 @media (max-width: 1200px) {
     .backgrounds {
@@ -206,6 +205,6 @@ section {
     }
 
     .sessao:hover {
-        transform: scale(1.02);
+        transform: scale(0.98) rotateX(5deg) rotateY(-1deg);
     }
 }
