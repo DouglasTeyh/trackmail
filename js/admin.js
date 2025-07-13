@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <input type="text" id="filterClienteCpfCnpj" placeholder="Digite o CPF/CNPJ">
             </div>
             <button class="btn" id="searchClientes">Buscar Clientes</button>
-            <div class="table-container">
+            <br>
+            
                 <table id="clientesTable">
                     <thead>
                     <tr>
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <tbody>
                     </tbody>
                 </table>
-            </div>
+            
         `,
         encomendas: `
             <h2>Gerenciar Encomendas</h2>
