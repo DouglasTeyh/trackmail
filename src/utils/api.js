@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 
-const API_BASE_URL = 'http://200.133.17.234:5000';
+const API_BASE_URL = '/api';
 
 export function useApi() {
     const message = ref('');
