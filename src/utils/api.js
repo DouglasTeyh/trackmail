@@ -1,6 +1,8 @@
 import { ref } from 'vue';
 
-const API_BASE_URL = '/api';
+const API_BASE_URL = import.meta.env.PROD 
+    ? '/api' 
+    : 'http://200.133.17.234:5000';
 
 export function useApi() {
     const message = ref('');
