@@ -1,6 +1,8 @@
 
 ![TrackMAIL Logo](/public/img/logo.svg) 
 # TrackMAIL Sistema de Gestão de Logística
+[![Acessar Site](https://img.shields.io/badge/ACESSAR%20SITE-%E2%86%92-blue?style=for-the-badge)](https://trackmailproject.vercel.app)
+
 Bem-vindo ao TrackMAIL, uma aplicação web completa para gestão e rastreamento de encomendas. Desenvolvido como um sistema robusto e intuitivo, o TrackMAIL oferece um painel administrativo protegido por login para gerenciamento completo de clientes, encomendas, rotas e entregas, além de uma interface pública para que os clientes possam rastrear suas encomendas em tempo real.
 
 Este projeto foi construído com as mais modernas tecnologias de frontend, utilizando Vue 3 com a Composition API e Vite para uma experiência de desenvolvimento ágil e performática.
@@ -89,8 +91,8 @@ Para rodar o projeto, você precisa de dois terminais: um para o backend (API) e
     npm run dev
     ```
 
-2. A aplicação estará disponível em `http://localhost:5173`.
-    * ou então acesse o site: 
+2. A aplicação estará disponível em `http://localhost:(PORTA)`.
+    * ou então acesse o site: `https://trackmailproject.vercel.app/`
 ---
 
 ## 🚀 Deploy
