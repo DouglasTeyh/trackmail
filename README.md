@@ -106,5 +106,5 @@ O projeto está pronto e foi publicado na plataforma [Vercel](https://vercel.com
     * **LinkedIn:** [DouglasTeyh](https://www.linkedin.com/in/douglasteyh/)
 
 * **Wellington Vinicius**
-    * **GitHub:** [@username](https://github.com/username)
-    * **LinkedIn:** [username](https://www.linkedin.com/in/username/) "se nao tiver pode remover"
+    * **GitHub:** [@WellingtonViniciuz](https://github.com/WellingtonViniciuz)
+    * **LinkedIn:** [wellington-vinicnius-jiudev](https://www.linkedin.com/in/wellington-vinicnius-jiudev/)
